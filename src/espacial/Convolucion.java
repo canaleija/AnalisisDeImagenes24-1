@@ -18,6 +18,7 @@ public class Convolucion {
     // convolucion simple    
     public Image convolucionar(int[] mascara, int div){
         Color nuevo;
+        BufferedImage aux = new BufferedImage(this.imagenOriginal.getWidth(), this.imagenOriginal.getHeight(), BufferedImage.TYPE_INT_RGB);
 //        
 //        Color f = new Color(this.imagenOriginal.getRGB(0,0));
 //        System.out.println();
@@ -27,10 +28,10 @@ public class Convolucion {
                 // tenemos un nuevo tono
                 int rgb = convolucionar(x,y,mascara,div);
                 nuevo = new Color(rgb);
-                this.imagenOriginal.setRGB(x, y, nuevo.getRGB());
+                aux.setRGB(x, y, nuevo.getRGB());
             }
         }
-    return herramientas.HerramientasImagen.toImage(imagenOriginal);
+    return herramientas.HerramientasImagen.toImage(aux);
     }    
 
     private int convolucionar(int x, int y, int[] mascara, int div) {

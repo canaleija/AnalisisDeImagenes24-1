@@ -14,13 +14,13 @@ public class Main {
         //Image gris = OperacionesBasicas.escalaDeGrises(imagen);
         JFrameImg frame = new JFrameImg(imagen);
         
-        Image ruido = espacial.Ruido.agregarRuidoAditivo(imagen, 5);
-        JFrameImg frame3 = new JFrameImg(ruido);
+       // Image ruido = espacial.Ruido.agregarRuidoAditivo(imagen, 5);
+       // JFrameImg frame3 = new JFrameImg(ruido);
        // ColoresHitogrmas ch = new ColoresHitogrmas(imagen);
         Convolucion convo = new Convolucion(herramientas.HerramientasImagen.toBufferedImage(imagen));
-        Image nueva = convo.convolucionar(new int[]{1,1,1,
-                                                    1,0,1,
-                                                    1,1,1}, 8);
+        Image nueva = convo.convolucionar(new int[]{0,1,0,
+                                                    1,-4,1,
+                                                    0,1,0}, 9);
         
         JFrameImg frame2 = new JFrameImg(nueva);
 
