@@ -5,7 +5,7 @@ import gui.JFrameImg;
 import herramientas.ColoresHistogramas;
 import herramientas.Graficador;
 import java.awt.Image;
-import sun.awt.image.AbstractMultiResolutionImage;
+
 
 
 public class Main {
