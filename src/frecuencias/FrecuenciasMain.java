@@ -9,8 +9,9 @@ import herramientas.HerramientasImagen;
 
 public class FrecuenciasMain {
     public static void main(String[] args) {
+        // obtenemos la imagen original
         Image imagenOriginal = HerramientasImagen.abrirImagen();
-
+       // cponvertimos a grises
         Image grises = OperacionesBasicas.escalaDeGrises(imagenOriginal);
         // mostramos la imagen original
         JFrameImg frame1 = new JFrameImg(imagenOriginal);
@@ -19,6 +20,7 @@ public class FrecuenciasMain {
 
         // obtenemos el buffer con el espectro de frecuencias
         BufferedImage bImage = HerramientasImagen.toBufferedImage(imagenOriginal);
+        
         // convertimos a matriz de numeros complejos
         NumeroComplejo[][] aux = gestor.obtenerDatosPorCanal(bImage, HerramientasColor.CanalColor.VERDE);
 

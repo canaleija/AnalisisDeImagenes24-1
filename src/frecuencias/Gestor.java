@@ -46,7 +46,7 @@ public NumeroComplejo[][] obtenerDatosPorCanal(BufferedImage imagenOriginal, Can
                     // setear la info a la imagen 
                     // el que se ecuentre en la imagen 
                     int color1 = aux.getRGB(x, y);
-                    int color2 = obtenerColorRealDeFrecuencia(ejeX, ejeY, transformada, HerramientasColor.CanalColor.ROJO);
+                    int color2 = obtenerColorRealDeFrecuencia(ejeX, ejeY, transformada, HerramientasColor.CanalColor.VERDE);
                     int rgb = HerramientasColor.acumularColor(color1, color2);
                     aux.setRGB(x, y, rgb);
 
