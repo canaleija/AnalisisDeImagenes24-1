@@ -28,9 +28,17 @@ public class FrecuenciasMain {
         BufferedImage biFrecuencias = gestor.obtenerImagenFrecuencias(aux,
                                                                          bImage.getWidth(),
                                                                           bImage.getHeight(), true);
-
+    
         // mostramos la imagen original
         JFrameImg frame2 = new JFrameImg(HerramientasImagen.toImage(biFrecuencias));
+
+        // obtenemos la imagen resultante de aplicar la FFT inversa
+
+        BufferedImage resultante = gestor.obtenerImagenEspacial();
+
+        // mostramos la imagen original
+        JFrameImg frame3 = new JFrameImg(HerramientasImagen.toImage(resultante));
+
 
         
     }
