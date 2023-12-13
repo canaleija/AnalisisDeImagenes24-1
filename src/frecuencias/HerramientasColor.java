@@ -47,7 +47,7 @@ public static int obtenerValorGris(int rgb){
 
 public static int obtenerRGBdeGris(int valor){
 
-   int aux = new Color(valor).getRGB();
+   int aux = new Color(valor,valor,valor).getRGB();
   
    
    return aux;

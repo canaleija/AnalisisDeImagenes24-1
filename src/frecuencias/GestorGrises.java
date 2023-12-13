@@ -47,8 +47,8 @@ public class GestorGrises {
                     // el que se ecuentre en la imagen 
                     int color1 = aux.getRGB(x, y);
                     int color2 = obtenerColorRealDeFrecuenciaGrises(ejeX, ejeY, transformada);
-                    int rgb = HerramientasColor.acumularColor(color1, color2);
-                    aux.setRGB(x, y, rgb);
+                    //int rgb = HerramientasColor.acumularColor(color1, color2);
+                    aux.setRGB(x, y, color2);
 
                 }
             }
