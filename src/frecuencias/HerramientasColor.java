@@ -36,6 +36,25 @@ public static int obtenerValorPorCanal(int rgb, CanalColor canal){
     
 }
 
+// metodo que retorna el promedio para calcular escala de grises
+public static int obtenerValorGris(int rgb){
+
+    Color color = new Color(rgb);
+    int promedio =( color.getRed()+color.getGreen()+color.getBlue())/ 3;
+    return promedio;
+    
+}
+
+public static int obtenerRGBdeGris(int valor){
+
+   int aux = new Color(valor).getRGB();
+  
+   
+   return aux;
+    
+}
+
+
 public static int obtenerRGBPorCanal(int valor, CanalColor canal){
 
    int aux = 0;
