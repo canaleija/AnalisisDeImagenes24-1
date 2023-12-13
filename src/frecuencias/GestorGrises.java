@@ -84,7 +84,12 @@ public class GestorGrises {
         return aux;
 
     }
+    // proceso iterativo donde aplicamos el filtro ""
+    public void aplicarFiltro (NumeroComplejo[][]filtro){
 
+
+
+    }
 
 
 
