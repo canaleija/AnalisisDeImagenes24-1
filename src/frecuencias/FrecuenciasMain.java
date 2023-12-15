@@ -11,32 +11,51 @@ public class FrecuenciasMain {
     public static void main(String[] args) {
         // obtenemos la imagen original
         Image imagenOriginal = HerramientasImagen.abrirImagen();
+
         // cponvertimos a grises
         Image grises = OperacionesBasicas.escalaDeGrises(imagenOriginal);
         // mostramos la imagen original
         JFrameImg frame1 = new JFrameImg(grises);
+        
+
+        Image imagenRuido = espacial.Ruido.agregarRuidoAditivo(grises, 25);
+
+        JFrameImg frameRuido = new JFrameImg(imagenRuido);
+
+
+
         // Gestor para el calculo del espectro de las frecuencias
         GestorGrises gestor = new GestorGrises();
+        GestorGrises gestor2 = new GestorGrises();
 
-        // obtenemos el buffer para el calculo del espectro
-        BufferedImage bImage = HerramientasImagen.toBufferedImage(grises);
+
+        BufferedImage bIGrises = HerramientasImagen.toBufferedImage(grises);
+        BufferedImage bImageRuido = HerramientasImagen.toBufferedImage(imagenRuido);
 
         // convertimos a matriz de numeros complejos
-        NumeroComplejo[][] aux = gestor.obtenerDatos(bImage);
+        NumeroComplejo[][] aux = gestor.obtenerDatos(bImageRuido);
+        NumeroComplejo[][] aux2 = gestor2.obtenerDatos(bIGrises);
 
-        BufferedImage biFrecuencias = gestor.obtenerImagenFrecuencias(aux,
-                bImage.getWidth(),
-                bImage.getHeight(), true);
+        BufferedImage biFrecuenciasRuido = gestor.obtenerImagenFrecuencias(aux,
+                bImageRuido.getWidth(),
+                bImageRuido.getHeight(), true);
+
+         BufferedImage biFrecuenciasGrises = gestor2.obtenerImagenFrecuencias(aux2,
+                bImageRuido.getWidth(),
+                bImageRuido.getHeight(), true);
 
         // mostramos la imagen original
-        JFrameImg frame2 = new JFrameImg(HerramientasImagen.toImage(biFrecuencias));
+        JFrameImg frame2 = new JFrameImg(HerramientasImagen.toImage(biFrecuenciasRuido));
+        JFrameImg frame3 = new JFrameImg(HerramientasImagen.toImage(biFrecuenciasGrises));
 
-        // obtenemos la imagen resultante de aplicar la FFT inversa
+        // aplicamos el filtro
+        gestor.aplicarFiltroDeClase();
 
         BufferedImage resultante = gestor.obtenerImagenEspacial();
 
-        // mostramos la imagen original
-        JFrameImg frame3 = new JFrameImg(HerramientasImagen.toImage(resultante));
+        JFrameImg frameResultado = new JFrameImg(HerramientasImagen.toImage(resultante));
+
+
 
     }
 }
