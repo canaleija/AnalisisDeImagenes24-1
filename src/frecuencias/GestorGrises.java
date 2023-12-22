@@ -93,8 +93,8 @@ public class GestorGrises {
             }
         }
 
-        for (int x = 107; x <= 148; x++)
-            for (int y = 107; y <= 148; y++) {
+        for (int x = 47; x <= 208; x++)
+            for (int y = 47; y <= 208; y++) {
                 aux[x][y] = new NumeroComplejo(transformada[x][y]);
 
             }

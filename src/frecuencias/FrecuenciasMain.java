@@ -18,7 +18,7 @@ public class FrecuenciasMain {
         JFrameImg frame1 = new JFrameImg(grises);
         
 
-        Image imagenRuido = espacial.Ruido.agregarRuidoAditivo(grises, 25);
+        Image imagenRuido = espacial.Ruido.agregarRuidoAditivo(grises, 5);
 
         JFrameImg frameRuido = new JFrameImg(imagenRuido);
 
